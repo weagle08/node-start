@@ -1,0 +1,19 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "main": "server.js",
+  "author": {
+    "name": "ben"
+  },
+  "dependencies": {
+    "express": "^4.*",
+    "bunyan": "^1.*",
+    "compression": "^1.*",
+    "vash": "^0.8.*",
+    "mkdirp": "^0.5.*"
+  },
+  "devDependencies": {
+    "mocha": "^2.*",
+    "chai": "^3.*"
+  }
+}
