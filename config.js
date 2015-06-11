@@ -15,7 +15,12 @@ logsDir = path.resolve(logsDir);
 mkdirp.sync(logsDir);
 
 var applicationConfig = {
-    threads: 1,
+    forks: 1,
+    forkRecoveryAttempts: 2,
+    port: 9001,
+    requestLogging: true,
+    uppercaseQueries: true,
+    allowCors: true,
     logging: {
         directory: logsDir,
         dev: {
