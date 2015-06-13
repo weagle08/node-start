@@ -1,2 +1,2 @@
 # node-start
-Starting point for node application
+Starting point for nodejs application
