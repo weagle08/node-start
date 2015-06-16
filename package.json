@@ -9,8 +9,8 @@
     "express": "^4.*",
     "bunyan": "^1.*",
     "compression": "^1.*",
-    "vash": "^0.8.*",
-    "mkdirp": "^0.5.*"
+    "mkdirp": "^0.5.*",
+    "q": "^1.4.*"
   },
   "devDependencies": {
     "mocha": "^2.*",

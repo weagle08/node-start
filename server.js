@@ -7,7 +7,8 @@ var bunyan = require('bunyan');
 var compression = require('compression');
 var fs = require('fs');
 var cluster = require('cluster');
-
+var DataManager = require('./data/dataManager');
+var ServiceManager = require('./services/serviceManager');
 var appConfig = require('./config');
 process.appConfig = appConfig;
 
@@ -110,6 +111,9 @@ if(cluster.isMaster) {
             res.status(200).send('ok');
         });
     }
+
+    var dm = new DataManager(null);  //TODO: init database
+    var sm = new ServiceManager(app, dm);
 
     //express bad request handling
     app.use(function(req, res){

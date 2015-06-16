@@ -2,7 +2,9 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui">
+    <title>node-start</title>
 
     <!--css styles-->
     <link type="text/css" rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css"/>
@@ -10,25 +12,29 @@
     <link type="text/css" rel="stylesheet" href="css/site.css"/>
     <!--end css styles-->
 </head>
-<body ng-app="logging">
-
+<body ng-app="ngapp">
+<a href="#/logs">logs</a>
 <div ng-view></div>
 
 <script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="lib/datejs/build/production/date.min.js"></script>
-<script type="text/javascript" src="lib/angular/angular.min.js"></script>
+<script type="text/javascript" src="lib/angular/angular.js"></script>
 <script type="text/javascript" src="lib/angular-route/angular-route.min.js"></script>
 <script type="text/javascript" src="lib/angular-resource/angular-resource.min.js"></script>
 <script type="text/javascript" src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
 
 <script type="text/javascript" src="js/settings.js"></script>
+
 <script type="text/javascript" src="lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
 <script type="text/javascript" src="lib/angular-ui-grid/ui-grid.min.js"></script>
 
-<script type="text/javascript" src="js/ng/logging/logging.js"></script>
-<script type="text/javascript" src="js/ng/logging/services/logsService.js"></script>
-<script type="text/javascript" src="js/ng/logging/filters/logLevelFilter.js"></script>
-<script type="text/javascript" src="js/ng/logging/directives/objectTree.js"></script>
-<script type="text/javascript" src="js/ng/logging/controllers/logsController.js"></script>
+<script type="text/javascript" src="js/ng/app.js"></script>
+
+<!--register angular modules-->
+<script type="text/javascript" src="js/ng/modules/logging.js"></script>
+<script type="text/javascript" src="js/ng/services/logsService.js"></script>
+<script type="text/javascript" src="js/ng/filters/logLevelFilter.js"></script>
+<script type="text/javascript" src="js/ng/directives/objectTree.js"></script>
+<script type="text/javascript" src="js/ng/controllers/logsController.js"></script>
 </body>
 </html>

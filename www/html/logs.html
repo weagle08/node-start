@@ -1,0 +1,56 @@
+<div>
+    <div>
+        <div class="form-group">
+            <div>
+                <label>Log File:
+                    <select ng-model="selectedFile" ng-change="getLogFile(selectedFile)"
+                            ng-options="file as file for file in logFiles"
+                            class="form-control" style="font-weight: 100; font-size: 18px;">
+
+                    </select>
+                </label>
+            </div>
+
+            <div class="form-group-lg">
+                <div class="checkbox-inline">
+                    <label>
+                        <input type="checkbox" value="10" ng-checked="viewTrace" ng-model="viewTrace" ng-change="onLogFiltersChanged()"/>Trace
+                    </label>
+                </div>
+                <div class="checkbox-inline">
+                    <label>
+                        <input type="checkbox" value="20" ng-checked="viewDebug" ng-model="viewDebug" ng-change="onLogFiltersChanged()"/>Debug
+                    </label>
+                </div>
+                <div class="checkbox-inline">
+                    <label>
+                        <input type="checkbox" value="30" ng-checked="viewInfo" ng-model="viewInfo" ng-change="onLogFiltersChanged()"/>Info
+                    </label>
+                </div>
+                <div class="checkbox-inline">
+                    <label>
+                        <input type="checkbox" value="40" ng-checked="viewWarning" ng-model="viewWarning" ng-change="onLogFiltersChanged()"/>Warning
+                    </label>
+                </div>
+                <div class="checkbox-inline">
+                    <label>
+                        <input type="checkbox" value="50" ng-checked="viewError" ng-model="viewError" ng-change="onLogFiltersChanged()"/>Error
+                    </label>
+                </div>
+                <div class="checkbox-inline">
+                    <label>
+                        <input type="checkbox" value="60" ng-checked="viewFatal" ng-model="viewFatal" ng-change="onLogFiltersChanged()"/>Fatal
+                    </label>
+                </div>
+            </div>
+
+            <div ui-grid="gridOptions" ui-grid-selection ui-grid-pagination></div>
+        </div>
+        <div ng-show="selectedEntry != null">
+            <h4>Details:</h4>
+            <object-tree root="selectedEntry"></object-tree>
+        </div>
+    </div>
+    <!--logging modules registered in the app.js (the ng-app file)-->
+
+</div>
