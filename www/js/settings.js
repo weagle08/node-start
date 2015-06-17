@@ -3,6 +3,6 @@
  */
 var settings = {
     localServer: 'http://localhost:9001',
-    logsEndpoint: '/api/10/100/logs',
-    logEndpoint: '/api/10/100/logs/:filename'
+    getLogFiles: '/api/10/100/logs',
+    getLogFile: '/api/10/100/logs/:filename'
 };

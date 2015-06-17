@@ -5,7 +5,7 @@ loggingApp.factory('logsService', function($http, $resource, $q){
     function getLogFileNames(){
         var deferred = $q.defer();
 
-        var url = settings.localServer + settings.logsEndpoint;
+        var url = settings.localServer + settings.getLogFiles;
 
         $http.get(url).success(function(result){
             deferred.resolve(result);
@@ -19,7 +19,7 @@ loggingApp.factory('logsService', function($http, $resource, $q){
     function getLogFile(filename) {
         var deferred = $q.defer();
 
-        var url = settings.localServer + settings.logEndpoint;
+        var url = settings.localServer + settings.getLogFile;
         var logs = $resource(url, {filename: '@filename'}, {query: {
             method: 'GET',
             isArray: true,

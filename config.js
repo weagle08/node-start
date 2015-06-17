@@ -23,6 +23,8 @@ var applicationConfig = {
     allowCors: true,
     logging: {
         directory: logsDir,
+        getLogFiles: '/api/10/100/logs',
+        getLogFile: '/api/10/100/logs/:filename',
         dev: {
             name: pkgJson.name,
             serializers: bunyan.stdSerializers,

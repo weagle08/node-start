@@ -53,10 +53,10 @@ if(cluster.isMaster) {
     }
 
     cluster.on('exit', function(deadWorker, code, signal){
-        log.fatal('Process ' + deadWorker.process.pid + '(id: ' + parseInt(deadWorker.id % numCpu) + ') died. Exit Code: ' + code);
+        log.fatal('Fork ' + deadWorker.process.pid + '(id: ' + parseInt(deadWorker.id % numCpu) + ') died. Exit Code: ' + code);
         //we will try n times for each fork to restart
         if(deadWorker.id / numCpu >= appConfig.forkRecoveryAttempts) {
-            log.fatal('process died and recovery attempts exceeded');
+            log.fatal('fork died and recovery attempts exceeded');
         } else {
             cluster.fork({WORKER_ID: parseInt(deadWorker.id % numCpu)});
         }

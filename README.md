@@ -19,7 +19,7 @@ Logging is included via the [node-bunyan](https://github.com/trentm/node-bunyan)
     * logging.getLogFile (string) - rest endpoint where the log view can request a particular log file by name. **Must have a /:filename parameter in url path**
 
 0. Modify settings in ./www/js/settings.js
-    
+
     * localserver (string) - just points to the local machine and correct port (eg: http://localhost:[port])
     * getLogFiles (string) - matches the enpoint of same name from the config.js file
     * getLogFile (string) - matches the endpoint of same name from the config.js file
@@ -27,4 +27,4 @@ Logging is included via the [node-bunyan](https://github.com/trentm/node-bunyan)
 0. Start the app (type 'node server' in a terminal from within your base directory)
 
 
-THAT'S IT! You are now running a nodejs application. To verify it is up and running you can navigate to http://[yourIp]:[port]/logs and you should see the log viewer!
+THAT'S IT! You are now running a nodejs application. To verify it is up and running you can navigate to http://[yourIp]:[port]/#/logs and you should see the log viewer!
