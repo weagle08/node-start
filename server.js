@@ -7,8 +7,8 @@ var bunyan = require('bunyan');
 var compression = require('compression');
 var fs = require('fs');
 var cluster = require('cluster');
-var DataManager = require('./data/dataManager');
-var ServiceManager = require('./services/serviceManager');
+var DataManager = require('./lib/data/dataManager');
+var ServiceManager = require('./lib/services/serviceManager');
 var appConfig = require('./config');
 process.appConfig = appConfig;
 
