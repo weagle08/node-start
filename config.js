@@ -9,7 +9,7 @@ var mkdirp = require('mkdirp');
 var pkgJson = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 var logLevel = 'info';
 var appId = process.env.WORKER_ID || 'main';
-var logsDir = './logs';
+var logsDir = path.join(__dirname, './logs');
 
 logsDir = path.resolve(logsDir);
 mkdirp.sync(logsDir);
