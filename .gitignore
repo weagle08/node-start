@@ -1,4 +1,10 @@
-node_modules/
+node_modules
+dist
+jspm_packages
 *.log
-.idea/workspace.xml
-www/lib/
+logs
+coverage
+.nyc_output
+apidocs
+docs
+package-lock.json
