@@ -1,56 +1,47 @@
 import ReadLine from 'readline';
+import { GradeBook } from './grade-book';
+import { Student } from './student';
 
 const rl = ReadLine.createInterface({
     input: process.stdin,
     output: process.stdout
 });
 
-let maxNum = 1;
+// print list students
+// add a new student
 
-rl.question('Choose your max number: ', (maxNumStr: string) => {
-    maxNum = parseInt(maxNumStr);
+const gradeBook = new GradeBook();
+gradeBook.teacherName = 'Ben Johnson';
 
-    guessNumber(maxNum);
-});
+const printStudents = () => {
+    for (let student of gradeBook.students) {
+        console.log(student.name);
+    }
+    console.log();
+};
 
-// function guessNumber(max: number) {
-//     rl.question(`Guess a number between 1 and ${max}: `, (guessStr: string) => {
-//         let randNum = Math.floor(Math.random() * max) + 1;
-//         let guessNum = parseInt(guessStr);
+const addStudent = () => {
+    rl.question('Student name?\n', (name: string) => {
+        let student = new Student();
+        student.name = name;
 
-//         if (guessNum == randNum) {
-//             console.log('you guessed it!!!!');
-//         } else {
-//             console.log(`${guessNum} is not equal to ${randNum}`);
-//         }
-
-//         rl.question('Would you like to try again? ', (answer: string) => {
-//             if (answer == 'yes') {
-//                 guessNumber(maxNum);
-//             } else {
-//                 rl.close();
-//             }
-//         });
-//     });
-// }
-
-const guessNumber = (max: number) => {
-    rl.question(`Guess a number between 1 and ${max}: `, (guessStr: string) => {
-        let randNum = Math.floor(Math.random() * max) + 1;
-        let guessNum = parseInt(guessStr);
-
-        if (guessNum == randNum) {
-            console.log('you guessed it!!!!');
-        } else {
-            console.log(`${guessNum} is not equal to ${randNum}`);
-        }
-
-        rl.question('Would you like to try again? ', (answer: string) => {
-            if (answer == 'yes') {
-                guessNumber(maxNum);
-            } else {
-                rl.close();
-            }
-        });
+        gradeBook.students.push(student);
+        console.log('\nStudent succesfully added!\n');
+        gradeBookActions();
     });
-}
+};
+
+const gradeBookActions = () => {
+    rl.question(`What would you like to do in ${gradeBook.teacherName} gradebook?\n\t1. Print students\n\t2. Add student\n`, (selStr: string) => {
+        let selNum = parseInt(selStr);
+
+        if (selNum == 1) {
+            printStudents();
+        } else if (selNum == 2) {
+            addStudent();
+        }
+        gradeBookActions();
+    });
+};
+
+gradeBookActions();
